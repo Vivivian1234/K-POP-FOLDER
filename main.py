@@ -82,6 +82,15 @@ def ExtraVariables_VISUALISED():
         else:
             print ("Why did you type '5' if you're not going to add any extra variable then.")
 
+def ExtraVariables():
+    answer = input("Would you like to add a specific time period? ")
+    if answer in list:
+        year1 = int(input("Name the beginning year. "))
+        year2 = int(input("Name the ending year. "))
+        year_difference = year2 - year1
+        if year_difference == 0:
+            print("HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+
 
 def userOptions():
     global quit
@@ -118,7 +127,7 @@ def userOptions():
     except:
         print('Enter a number, it is not that hard.')
 
-   
+
 
 #----Main program----#
 while not quit:
