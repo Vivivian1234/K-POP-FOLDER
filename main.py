@@ -4,6 +4,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
+list = ["Yes", "yes", "YES"]
+
 #----Global Variables----#
 quit = False
 
@@ -23,23 +25,38 @@ def showUpdatedData():
 def showCharts():
     KPopRankings_df.plot(
                     kind='bar',
-                    x='Country',
-                    y='AUD',
+                    x='Artist',
+                    y='Number of times trending',
                     color='blue',
                     alpha=0.3,
-                    title='Cost of a Big Mac in AUD')
+                    title='Artist popularity')
     plt.show()
+
+def ExtraVariables():
+    answer = input("Would you like to add a specific time period? ")
+    if answer in list:
+        year1 = int(input("Name the beginning year. "))
+        year2 = int(input("Name the ending year. "))
+        year_difference = year2 - year1
+        if year_difference == 0:
+
+
+7
+
+
+
 
 def userOptions():
     global quit
 
-    print("""Welcome to the Big Mac Data Extraordinaire!
+    print("""Welcome to the Kpop!
           
     Please select an option:
     1 - Show the original dataset
     2 - Show the updated Data Frame
-    3 - Visualise the cost of a big mac in AUD
-    4 - Quit Program
+    3 - Visualise the most popular kpop songs
+    4- Add extra variable [time period, most popular]
+    5 - Quit Program
         """)
     
     try:
@@ -51,7 +68,9 @@ def userOptions():
             showUpdatedData()
         elif choice == 3:
             showCharts()
-        elif choice == 4:
+        elif choice == 3:
+
+        elif choice == 5:
             quit = True
         else:
             print('A number between 1 and 4, come on!')
