@@ -72,11 +72,12 @@ def ExtraVariables_VISUALISED():
     
     if action in affirmative_responses:
         top_number = int(input("Enter how many: "))
-
         top_artists_df = filtered_df.groupby('Artist(s)').size().reset_index(name='counts')
         top_artists_df = top_artists_df.sort_values(by='counts', ascending=False).head(top_number)
 
-        
+        print("\nTop Artists DataFrame:")
+        print(top_artists_df)
+
         top_artists_df.plot(
             kind='bar',
             x='Artist(s)',
@@ -92,8 +93,7 @@ def ExtraVariables_VISUALISED():
         plt.tight_layout()
         plt.show()
         
-        print("\nTop Artists DataFrame:")
-        print(top_artists_df)
+
     else:
         filtered_df = filtered_df.groupby('Artist(s)').size().reset_index(name='counts')
         filtered_df.plot(
