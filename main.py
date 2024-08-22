@@ -5,7 +5,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-affirmative_responses = ["Yes", "yes", "YES"]
+affirmative_responses = ["Yes", "yes", "YES", "yeas", "yeah", "yea", "yep", "YEAS", "YEAH", "YEA", "YEP", "yuppers"]
 
 #----Global Variables----#
 quit = False
@@ -120,26 +120,23 @@ def userOptions():
           
     Please select an option:
     1 - Show the original dataset
-    2 - Show the updated Data Frame
-    3 - Visualise the most popular kpop songs
-    4- Add extra variable [year, top #] (dataframe)
-    5- Add extra variable [year, top #] (visualised)
-    6 - Quit Program
+    2 - Visualise the most popular kpop songs
+    3- Add extra variable [year, top #] (dataframe)
+    4- Add extra variable [year, top #] (visualised)
+    5 - Quit Program
         """)
     
     choice = int(input('Enter Selection: '))
-
+    
     if choice == 1:
         showOriginalData()
     elif choice == 2:
-        showUpdatedData()
-    elif choice == 3:
         showCharts()
-    elif choice == 4:
+    elif choice == 3:
         ExtraVariables_DATAFRAME()
-    elif choice == 5:
+    elif choice == 4:
         ExtraVariables_VISUALISED()
-    elif choice == 6:
+    elif choice == 5:
         quit = True
     else:
         print('A number between 1 and 6, come on!')
